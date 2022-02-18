@@ -1,0 +1,8 @@
+.clock {
+  width: 360px;
+  height: 100px;
+  background-color: coral;
+  font-size: 80px;
+  text-align: center;
+  border-radius: 50px;
+}

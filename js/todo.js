@@ -1,5 +1,6 @@
-const toDoForm = document.getElementById("todo-form");
-const toDoList = document.getElementById("todo-list");
+'use strict'
+const toDoForm = document.querySelector(".todo__form");
+const toDoList = document.querySelector(".todo__list");
 const toDoInput = toDoForm.querySelector("input");
 
 const TODOS_KYE = "todos";
@@ -54,3 +55,9 @@ if(savedToDos !== null) {
     parsedToDos.forEach(paintToDo);
 }
 
+
+
+// Todo list btn click --> text field focus
+const focusMethod = function getFocus() {
+    document.getElementById("textField").focus();
+  }
