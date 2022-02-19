@@ -1,12 +1,12 @@
 @import "reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap");
 @import "variable.css";
-@import "/css/todo.css";
-@import "/css/login.css";
-@import "/css/aside.css";
-@import "/css/clock.css";
-@import "/css/quotes.css";
-@import "/css/weather.css";
+@import "css/todo.css";
+@import "css/login.css";
+@import "css/aside.css";
+@import "css/clock.css";
+@import "css/quotes.css";
+@import "css/weather.css";
 
 body {
   font-family: "Noto Sans KR", sans-serif;
