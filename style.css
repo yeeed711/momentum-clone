@@ -6,11 +6,17 @@
 @import "/css/aside.css";
 @import "/css/clock.css";
 @import "/css/quotes.css";
+@import "/css/weather.css";
 
 body {
   font-family: "Noto Sans KR", sans-serif;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+img {
+  position: absolute;
+  z-index: -1;
 }
