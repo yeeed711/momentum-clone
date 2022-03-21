@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="container">
+      <!-- bookmark -->
       <div class="bookmark">
         <a href="https://www.google.co.kr/" target="_blank">
           <img class="bookmark_img" src="img/google.png" alt="google" />
@@ -28,15 +29,42 @@
           Git-Hub</a
         >
       </div>
+      <!-- login -->
       <div class="login-form">
         <form class="loginForm hidden">
-          <input id="loginInput" type="text" placeholder="What's your name?" />
+          <input
+            id="loginInput"
+            type="text"
+            placeholder="What's your name?"
+            required
+          />
           <button class="login-btn">Login</button>
         </form>
-        <h3 class="login-text hidden"></h3>
+        <span class="login-text hidden">
+          > <span class="red">Hello</span>
+          <span class="text"></span>
+        </span>
       </div>
+      <!-- clock -->
       <div class="clock"></div>
-      <div class="todo-form">todo</div>
+      <!-- todo / time_check(add...)todo-form 안에 컨테이너로 넣기-->
+      <div class="todo-form">
+        <div class="todo-container">
+          <form class="todoForm">
+            <label for="todo-title" class="todo-title">To Do List</label>
+            <div>
+              <input
+                id="todo-title"
+                type="text"
+                placeholder="> Write your today To Do..."
+                required
+              />
+              <button class="input-btn">Enter</button>
+            </div>
+          </form>
+          <ul class="todo-items"></ul>
+        </div>
+      </div>
     </div>
 
     <script src="js/todo.js"></script>

@@ -32,6 +32,14 @@
   color: var(--gn);
 }
 
+.login-text {
+  color: var(--dark-font);
+}
+
+.red {
+  color: var(--red);
+}
+
 .hidden {
   display: none;
 }

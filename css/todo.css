@@ -1,4 +1,97 @@
 .todo-form {
   grid-column: 2 / 3;
-  background-color: burlywood;
+  display: flex;
+}
+
+.todo-container {
+  width: 100%;
+}
+
+.todo-container:first-child {
+  margin-right: 20px;
+}
+
+.todoForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.todoForm div {
+  display: flex;
+}
+.todo-title {
+  background-color: var(--org);
+  color: var(--dark-bg);
+  padding: 0 10px;
+  width: 95%;
+  margin-bottom: 8px;
+}
+
+.todoForm input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid var(--org);
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+}
+
+.todoForm input::placeholder {
+  color: var(--org);
+  font-family: "Fira Code", monospace;
+}
+
+.todoForm input:focus {
+  outline: none;
+  color: var(--org);
+  font-family: "Fira Code", monospace;
+}
+
+.todoForm input:focus::placeholder {
+  opacity: 0.2;
+}
+
+.todo-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.done-btn,
+.del-btn,
+.input-btn {
+  border: none;
+  background-color: transparent;
+  height: 22px;
+  margin: 0 5px;
+}
+
+.done-btn {
+  color: var(--dark-font);
+}
+
+.del-btn {
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.input-btn {
+  color: var(--bl);
+  padding: 2px 8px;
+  border: 1px solid var(--bl);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-item_text {
+  width: 100%;
 }

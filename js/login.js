@@ -15,7 +15,8 @@ function handleSubmit(event) {
 }
 
 function paintLogin(username) {
-  loginText.innerText = `hello ${username}`;
+  const name = document.querySelector(".text");
+  name.innerText = `,"${username}!"`;
   loginText.classList.remove(HIDDEN_CLASSNAME);
 }
 

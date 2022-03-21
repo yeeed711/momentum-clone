@@ -1,63 +1,59 @@
-'use strict'
-const toDoForm = document.querySelector(".todo__form");
-const toDoList = document.querySelector(".todo__list");
-const toDoInput = toDoForm.querySelector("input");
-
-const TODOS_KYE = "todos";
+const todoForm = document.querySelector(".todoForm");
+const todoInput = document.getElementById("todo-title");
+const todoList = document.querySelector(".todo-items");
 
 let toDos = [];
 
-function saveToDos() {
-    localStorage.setItem(TODOS_KYE, JSON.stringify(toDos));
+function handleSubmit(event) {
+  event.preventDefault();
+  const newTodo = todoInput.value;
+  todoInput.value = "";
+  const newObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+  toDos.push(newObj);
+  paintTodo(newObj);
+  saveTodo();
 }
 
-function deleteToDo(event) {
+function paintTodo(newTodo) {
+  const li = document.createElement("li");
+  li.id = newTodo.id;
+  li.classList.add("todo-item");
+  const span = document.createElement("span");
+  span.innerText = newTodo.text;
+  span.classList.add("todo-item_text");
+  const doneBtn = document.createElement("button");
+  doneBtn.innerText = ">";
+  doneBtn.classList.add("done-btn");
+  const delBtn = document.createElement("button");
+  delBtn.addEventListener("click", deleteTodo);
+  delBtn.innerText = "Delete";
+  delBtn.classList.add("del-btn");
+
+  li.appendChild(doneBtn);
+  li.appendChild(span);
+  li.appendChild(delBtn);
+  todoList.appendChild(li);
+}
+
+function deleteTodo(event) {
   const li = event.target.parentElement;
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-  saveToDos()
-} 
-
-function paintToDo(newTodo){
-  const li = document.createElement("li");
-  li.id = newTodo.id;
-  const span = document.createElement("span");
-  span.innerText= newTodo.text;
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click",deleteToDo);
-  li.appendChild(span);
-  li.appendChild(button);
-  toDoList.appendChild(li);
+  saveTodo();
 }
 
-function handleToDoSubmit(event) {
-  event.preventDefault();
-  const newTodo = toDoInput.value;
-  toDoInput.value = "";
-  const newTodoObj = {
-      text: newTodo,
-      id: Date.now()
-    };
-  toDos.push(newTodoObj);
-  paintToDo(newTodoObj);
-  saveToDos();
+function saveTodo() {
+  localStorage.setItem("todos", JSON.stringify(toDos));
 }
 
-toDoForm.addEventListener("submit", handleToDoSubmit);
+todoForm.addEventListener("submit", handleSubmit);
 
-
-const savedToDos = localStorage.getItem(TODOS_KYE);
-
-if(savedToDos !== null) {
-    const parsedToDos = JSON.parse(savedToDos);
-    toDos = parsedToDos;
-    parsedToDos.forEach(paintToDo);
+const savedTodo = localStorage.getItem("todos");
+if (savedTodo !== null) {
+  const parsedToDos = JSON.parse(savedTodo);
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintTodo);
 }
-
-
-
-// Todo list btn click --> text field focus
-const focusMethod = function getFocus() {
-    document.getElementById("textField").focus();
-  }
