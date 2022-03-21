@@ -11,31 +11,34 @@
   <body>
     <div class="container">
       <div class="bookmark">
-        <div class="bookmark_links">
-          <a href="https://www.google.co.kr/" target="_blank">
-            <img class="bookmark_img" src="img/google.png" alt="google" />
-            Google</a
-          >
-          <a href="https://www.naver.com/" target="_blank">
-            <img class="bookmark_img" src="img/naver.png" alt="naver" />Naver
-          </a>
+        <a href="https://www.google.co.kr/" target="_blank">
+          <img class="bookmark_img" src="img/google.png" alt="google" />
+          Google</a
+        >
+        <a href="https://www.naver.com/" target="_blank">
+          <img class="bookmark_img" src="img/naver.png" alt="naver" />Naver
+        </a>
 
-          <a href="https://www.youtube.com/" target="_blank">
-            <img class="bookmark_img" src="img/yutube.png" alt="youtube" />
-            Youtube</a
-          >
-          <a href="https://github.com/yeeed711" target="_blank">
-            <img class="bookmark_img" src="img/github_bk.png" alt="github" />
-            Git-Hub</a
-          >
-        </div>
+        <a href="https://www.youtube.com/" target="_blank">
+          <img class="bookmark_img" src="img/yutube.png" alt="youtube" />
+          Youtube</a
+        >
+        <a href="https://github.com/yeeed711" target="_blank">
+          <img class="bookmark_img" src="img/github_bk.png" alt="github" />
+          Git-Hub</a
+        >
       </div>
-      <div class="login-form">login</div>
+      <div class="login-form">
+        <form class="loginForm hidden">
+          <input id="loginInput" type="text" placeholder="What's your name?" />
+          <button class="login-btn">Login</button>
+        </form>
+        <h3 class="login-text hidden"></h3>
+      </div>
       <div class="clock"></div>
       <div class="todo-form">todo</div>
     </div>
 
-    <script src="https://unpkg.com/phosphor-icons"></script>
     <script src="js/todo.js"></script>
     <script src="js/login.js"></script>
     <script src="js/clock.js"></script>

@@ -1,4 +1,37 @@
 .login-form {
   grid-row: 2 / 3;
-  background-color: aquamarine;
+  display: flex;
+  color: var(--gn);
+}
+
+#loginInput,
+#loginInput::placeholder,
+.login-btn {
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+}
+
+#loginInput {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: var(--gn);
+}
+
+#loginInput:focus {
+  outline: none;
+}
+
+#loginInput::placeholder {
+  color: var(--dark-font);
+}
+
+.login-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--gn);
+}
+
+.hidden {
+  display: none;
 }
