@@ -1,4 +1,15 @@
 :root {
-  --point-color: #69ab92;
-  --box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 0.25);
+  --red: #bd4546;
+  --gn: #9dc06b;
+  --pur: #9779c1;
+  --bl: #4f99db;
+  --org: #ffca52;
+
+  /* Light mode color */
+  --light-bg: #fafafa;
+  --light-font: #8a8f9a;
+
+  /* Dark mode color */
+  --dark-bg: #273238;
+  --dark-font: #fafafa;
 }

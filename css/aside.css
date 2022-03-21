@@ -1,8 +1,0 @@
-.aside {
-  height: 800px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  box-sizing: border-box;
-  margin-right: 50px;
-}

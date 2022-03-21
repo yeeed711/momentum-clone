@@ -6,64 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="style.css" />
-    <title>Momentum</title>
+    <title>My Momentum</title>
   </head>
   <body>
-    <aside class="aside">
-      <div class="clock">00:00:00</div>
+    <div class="container">
+      <div class="bookmark">
+        <div class="bookmark_links">
+          <a href="https://www.google.co.kr/" target="_blank">
+            <img class="bookmark_img" src="img/google.png" alt="google" />
+            Google</a
+          >
+          <a href="https://www.naver.com/" target="_blank">
+            <img class="bookmark_img" src="img/naver.png" alt="naver" />Naver
+          </a>
 
-      <div class="login">
-        <h1 class="greeting hidden"></h1>
-        <form class="login__form hidden">
-          <input
-            required
-            maxlength="15"
-            type="text"
-            placeholder="이름을 알려주세요!"
-          />
-          <button>Log In</button>
-        </form>
-      </div>
-
-      <div class="weather-box">
-        오늘의 날씨
-        <div class="weather">
-          <span></span>
-          <span></span>
+          <a href="https://www.youtube.com/" target="_blank">
+            <img class="bookmark_img" src="img/yutube.png" alt="youtube" />
+            Youtube</a
+          >
+          <a href="https://github.com/yeeed711" target="_blank">
+            <img class="bookmark_img" src="img/github_bk.png" alt="github" />
+            Git-Hub</a
+          >
         </div>
       </div>
-
-      <div class="quote">
-        <i class="ph-quotes-fill"></i>
-        <span class="quote_quote"></span><br />
-        <span class="quote_author"></span>
-      </div>
-    </aside>
-
-    <div class="todo">
-      <span class="todo__title">| 할 일 목록</span>
-      <form class="todo__form">
-        <input
-          id="textField"
-          required
-          type="text"
-          placeholder="할일을 입력해주세요."
-        />
-      </form>
-      <div class="list-box">
-        <ul class="todo__list"></ul>
-        <button onclick="focusMethod()" class="todo__button">
-          <i class="ph-plus-circle-fill"></i>
-        </button>
-      </div>
+      <div class="login-form">login</div>
+      <div class="clock"></div>
+      <div class="todo-form">todo</div>
     </div>
 
     <script src="https://unpkg.com/phosphor-icons"></script>
     <script src="js/todo.js"></script>
     <script src="js/login.js"></script>
     <script src="js/clock.js"></script>
-    <script src="js/quotes.js"></script>
-    <script src="js/weather.js"></script>
-    <script src="js/background.js"></script>
   </body>
 </html>
