@@ -1,61 +1,43 @@
-.login {
+.login-form {
+  grid-row: 2 / 3;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  box-shadow: var(--box-shadow);
+  color: var(--gn);
 }
 
-.login__form {
-  width: 500px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#loginInput,
+#loginInput::placeholder,
+.login-btn {
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
 }
 
-.login__form input {
-  width: 300px;
-  height: 80px;
-  font-size: 30px;
-  color: var(--point-color);
-  padding: 0 20px;
+#loginInput {
+  width: 100%;
   border: none;
-  border-bottom: 1px solid black;
   background-color: transparent;
+  color: var(--gn);
 }
 
-.login__form input:focus {
-  color: var(--point-color);
+#loginInput:focus {
+  outline: none;
 }
 
-.login__form input::placeholder {
-  font-size: 30px;
+#loginInput::placeholder {
+  color: var(--dark-font);
 }
 
-.login__form button {
-  width: 100px;
-  height: 70px;
-  margin-top: 15px;
+.login-btn {
+  background-color: transparent;
   border: none;
-  font-size: 20px;
-  background-color: var(--point-color);
-  box-shadow: var(--box-shadow);
-  border-radius: 20px;
+  color: var(--gn);
 }
 
-.login__form button:hover {
-  background-color: #357960;
+.login-text {
+  color: var(--dark-font);
 }
 
-.greeting {
-  height: 300px;
-  font-size: 70px;
-  display: flex;
-  align-items: center;
+.red {
+  color: var(--red);
 }
 
 .hidden {
