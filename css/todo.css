@@ -95,3 +95,9 @@
 .todo-item_text {
   width: 100%;
 }
+
+.done-list {
+  text-decoration: line-through;
+  font-style: italic;
+  opacity: 0.5;
+}

@@ -12,4 +12,4 @@ function getClock() {
 }
 
 getClock();
-setInterval(getClock, 6000);
+// setInterval(getClock, 6000);
