@@ -3,18 +3,18 @@ const todoInput = document.getElementById("todo-title");
 const todoList = document.querySelector(".todo-items");
 
 let toDos = [];
-//서브밋제어
+
 function handleSubmit(event) {
   event.preventDefault();
   const newTodo = todoInput.value;
   todoInput.value = "";
-  appendToDos(newTodo);
+  appendTodo(newTodo);
 }
 
-function appendToDos(newTodo) {
+function appendTodo(newTodo) {
   const newObj = {
-    text: newTodo,
     id: Date.now(),
+    text: newTodo,
     type: false,
   };
   toDos.push(newObj);
@@ -22,27 +22,23 @@ function appendToDos(newTodo) {
   saveTodo();
 }
 
-//투두 그려주기
-function paintTodo(newTodo) {
+function paintTodo(newObj) {
   const li = document.createElement("li");
-  li.id = newTodo.id;
   li.classList.add("todo-item");
-
-  const span = document.createElement("span");
-  span.innerText = newTodo.text;
-  span.classList.add("todo-item_text");
-
+  li.id = newObj.id;
   const doneBtn = document.createElement("button");
   doneBtn.addEventListener("click", doneTodo);
   doneBtn.innerText = ">";
   doneBtn.classList.add("done-btn");
-
+  const span = document.createElement("span");
+  span.classList.add("todo-item_text");
+  span.innerText = newObj.text;
   const delBtn = document.createElement("button");
   delBtn.addEventListener("click", deleteTodo);
   delBtn.innerText = "Delete";
   delBtn.classList.add("del-btn");
 
-  if (newTodo.type) {
+  if (newObj.type) {
     span.classList.add("done-list");
   }
 
@@ -52,35 +48,40 @@ function paintTodo(newTodo) {
   todoList.appendChild(li);
 }
 
-// 버튼누르면 지우기
-function deleteTodo(event) {
+function doneTodo(event) {
   const li = event.target.parentElement;
-  li.remove();
-  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+
+  if (li.childNodes[1].classList.length > 1) {
+    li.childNodes[1].classList.remove("done-list");
+  } else {
+    li.childNodes[1].classList.add("done-list");
+  }
+
+  toDos = toDos.map((todo) =>
+    todo.id === parseInt(li.id) ? { ...todo, type: !todo.type } : todo
+  );
+
+  toDos.push();
   saveTodo();
 }
 
-// 배열로 로컬스토리지에 저장하기
+function deleteTodo(event) {
+  const li = event.target.parentElement;
+  li.remove();
+  toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
+  saveTodo();
+}
+
 function saveTodo() {
   localStorage.setItem("todos", JSON.stringify(toDos));
 }
 
-//완료시 이동
-function doneTodo(event) {
-  const li = event.target.parentElement;
-  li.classList.add("done-list");
-  toDos = toDos.map((toDo) =>
-    toDo.id === parseInt(li.id) ? { ...toDo, type: !toDo.type } : toDo
-  );
-
-  saveTodo(toDos);
-}
-
-todoForm.addEventListener("submit", handleSubmit);
-
-const savedTodo = localStorage.getItem("todos");
-if (savedTodo !== null) {
-  const parsedToDos = JSON.parse(savedTodo);
+const savedToDos = localStorage.getItem("todos");
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintTodo);
 }
+console.log(toDos);
+
+todoForm.addEventListener("submit", handleSubmit);

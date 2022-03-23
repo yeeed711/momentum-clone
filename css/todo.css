@@ -68,6 +68,10 @@
 
 .done-btn {
   color: var(--dark-font);
+  cursor: pointer;
+}
+.done-btn:hover {
+  color: var(--org);
 }
 
 .del-btn {
