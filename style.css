@@ -4,6 +4,7 @@
 @import "css/login.css";
 @import "css/clock.css";
 @import "css/bookmark.css";
+@import "css/mood.css";
 
 body {
   font-family: "Fira Code", monospace;
@@ -25,4 +26,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 3fr 3fr;
+}
+
+.light {
+  background-color: var(--light-bg);
+  color: var(--light-font);
 }

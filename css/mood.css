@@ -1,0 +1,15 @@
+.dark-light {
+  border: none;
+  background-color: transparent;
+  height: 22px;
+  width: 80px;
+  margin: 0 5px 20px;
+  color: var(--pur);
+  border: 1px solid var(--pur);
+  border-radius: 10px;
+}
+
+.dark-light:hover {
+  background-color: var(--pur);
+  color: white;
+}
