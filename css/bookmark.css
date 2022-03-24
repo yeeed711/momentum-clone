@@ -13,7 +13,7 @@ a {
 }
 
 a:visited {
-  color: var(--dark-font);
+  color: var(--light-font);
 }
 
 .bookmark_img {

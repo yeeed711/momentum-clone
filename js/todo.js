@@ -82,6 +82,5 @@ if (savedToDos !== null) {
   toDos = parsedToDos;
   parsedToDos.forEach(paintTodo);
 }
-console.log(toDos);
 
 todoForm.addEventListener("submit", handleSubmit);
