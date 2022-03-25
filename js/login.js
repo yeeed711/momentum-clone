@@ -2,6 +2,7 @@ const loginForm = document.querySelector(".loginForm");
 const loginInput = document.getElementById("loginInput");
 const loginContainer = document.querySelector(".login-form");
 const loginText = document.querySelector(".login-text");
+const logout = document.querySelector(".logout");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME = "username";
@@ -27,3 +28,11 @@ if (savedUsername === null) {
 } else {
   paintLogin(savedUsername);
 }
+
+function logOut() {
+  localStorage.removeItem(USERNAME);
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginText.classList.add(HIDDEN_CLASSNAME);
+}
+
+logout.addEventListener("click", logOut);

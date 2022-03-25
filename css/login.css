@@ -43,3 +43,20 @@
 .hidden {
   display: none;
 }
+
+.logout {
+  border: none;
+  background-color: transparent;
+  height: 22px;
+  margin: 20px 5px;
+  color: var(--gn);
+  border: 1px solid var(--gn);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0 10px;
+  font-family: "Fira Code", monospace;
+}
+
+.logout:hover {
+  opacity: 0.7;
+}
