@@ -33,6 +33,10 @@ function paintTodo(newObj) {
   const span = document.createElement("span");
   span.classList.add("todo-item_text");
   span.innerText = newObj.text;
+  const editBtn = document.createElement("button");
+  editBtn.addEventListener("click", todoEdit);
+  editBtn.classList.add("edit-btn");
+  editBtn.innerText = "↺";
   const delBtn = document.createElement("button");
   delBtn.addEventListener("click", deleteTodo);
   delBtn.innerText = "Delete";
@@ -44,6 +48,7 @@ function paintTodo(newObj) {
 
   li.appendChild(doneBtn);
   li.appendChild(span);
+  li.appendChild(editBtn);
   li.appendChild(delBtn);
   todoList.appendChild(li);
 }
@@ -61,7 +66,6 @@ function doneTodo(event) {
     todo.id === parseInt(li.id) ? { ...todo, type: !todo.type } : todo
   );
 
-  toDos.push();
   saveTodo();
 }
 
@@ -70,6 +74,26 @@ function deleteTodo(event) {
   li.remove();
   toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
   saveTodo();
+}
+
+function todoEdit(event) {
+  const li = event.target.parentElement;
+  const input = document.createElement("input");
+  input.classList.add("edit-text");
+  li.childNodes[1].appendChild(input);
+  input.value = li.childNodes[1].innerText;
+  input.addEventListener("change", () => {
+    updateTodo(input.value);
+    li.childNodes[1].removeChild(input);
+    li.childNodes[1].innerText = input.value;
+  });
+
+  function updateTodo(editText) {
+    toDos = toDos.map((todo) =>
+      todo.id === parseInt(li.id) ? { ...todo, text: editText } : todo
+    );
+    saveTodo();
+  }
 }
 
 function saveTodo() {

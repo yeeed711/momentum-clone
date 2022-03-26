@@ -59,16 +59,17 @@
 
 .done-btn,
 .del-btn,
+.edit-btn,
 .input-btn {
   border: none;
   background-color: transparent;
   height: 22px;
   margin: 0 5px;
+  cursor: pointer;
 }
 
 .done-btn {
   color: var(--dark-font);
-  cursor: pointer;
 }
 .done-btn:hover {
   color: var(--org);
@@ -78,7 +79,6 @@
   color: var(--red);
   border: 1px solid var(--red);
   border-radius: 10px;
-  cursor: pointer;
 }
 
 .del-btn:hover {
@@ -90,7 +90,6 @@
   padding: 2px 8px;
   border: 1px solid var(--bl);
   border-radius: 10px;
-  cursor: pointer;
 }
 
 .todo-item {
@@ -102,10 +101,31 @@
 
 .todo-item_text {
   width: 100%;
+  position: relative;
 }
 
 .done-list {
   text-decoration: line-through;
   font-style: italic;
   opacity: 0.5;
+}
+
+.edit-btn {
+  font-size: 20px;
+  color: var(--light-font);
+}
+
+.edit-btn:hover {
+  color: var(--dark-font);
+}
+
+.edit-text {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  font-family: "Fira Code", monospace;
+}
+
+.edit-text:focus {
+  outline-color: var(--org);
 }
