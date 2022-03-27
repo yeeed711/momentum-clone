@@ -1,15 +1,30 @@
 "use strict";
 
 const clock = document.querySelector(".clock");
+const today = document.querySelector(".today");
 
 function getClock() {
-  const today = new Date();
-  let hours = today.getHours();
-  const minutes = String(today.getMinutes()).padStart(2, "0");
-  const amPm = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12 || 12;
-  clock.innerText = `${hours}:${minutes} ${amPm}`;
+  const newDay = new Date();
+  const options = {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  };
+  clock.innerText = new Intl.DateTimeFormat("en-US", options).format(newDay);
 }
 
 getClock();
-setInterval(getClock, 60000);
+setInterval(getClock, 1000);
+
+function getDay() {
+  const newDay = new Date();
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "long",
+  };
+  today.innerText = new Intl.DateTimeFormat("ko-KR", options).format(newDay);
+}
+
+getDay();

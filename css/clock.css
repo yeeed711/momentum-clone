@@ -1,3 +1,8 @@
+.date-clock {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
 .clock {
   align-self: center;
   justify-self: center;
