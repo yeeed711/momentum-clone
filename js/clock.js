@@ -11,6 +11,18 @@ function getClock() {
     second: "numeric",
   };
   clock.innerText = new Intl.DateTimeFormat("en-US", options).format(newDay);
+  const mql = window.matchMedia("screen and (max-width: 412px)");
+  mql.addListener(function (e) {
+    if (e.matches) {
+      const options = {
+        hour: "numeric",
+        minute: "numeric",
+      };
+      clock.innerText = new Intl.DateTimeFormat("en-US", options).format(
+        newDay
+      );
+    }
+  });
 }
 
 getClock();

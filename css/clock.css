@@ -6,6 +6,21 @@
 .clock {
   align-self: center;
   justify-self: center;
-  font-size: 10rem;
+  font-size: 6.875rem;
   font-weight: bold;
+  white-space: nowrap;
+}
+
+/* 798px  */
+@media screen and (max-width: 768px) {
+  .clock {
+    font-size: 4.9375rem;
+  }
+  @media screen and (max-width: 412px) {
+    .clock {
+      width: inherit;
+      font-size: 50px;
+      white-space: normal;
+    }
+  }
 }

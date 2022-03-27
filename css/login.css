@@ -60,3 +60,10 @@
 .logout:hover {
   opacity: 0.7;
 }
+
+@media screen and (max-width: 412px) {
+  .login-form {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+  }
+}
